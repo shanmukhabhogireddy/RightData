@@ -23,14 +23,14 @@
         "IsfromValidation": false,
         "Iswait": null,
         "JsonIMDB": null,
-        "JsonUI": "[{\"widgetId\":\"dsStart_dropped\",\"UniqueId\":\"0\",\"stepId\":\"0\",\"description\":\"FDR using customsql on loan_Pushdown\",\"position\":\"position: absolute; left: 83px; top: 220.5px;\",\"warning\":null,\"decision\":null,\"status\":\"true\",\"mapping\":\"\",\"dsstep\":null,\"activestatus\":null},{\"widgetId\":\"dsExistingQuery_1\",\"UniqueId\":\"61\",\"stepId\":\"1\",\"description\":\"Read data from custom SQL query of the connection profile \\\"MSSQL_NJ\\\"\",\"position\":\"position: absolute; left: 348.788px; top: 114.625px;\",\"warning\":null,\"decision\":null,\"status\":\"true\",\"mapping\":\"61,1-[0,0]\",\"dsstep\":\"undefined\",\"activestatus\":null},{\"widgetId\":\"dsRecon_4\",\"UniqueId\":\"15\",\"stepId\":\"4\",\"description\":\"Map source & target fields\",\"position\":\"position: absolute; left: 606.792px; top: 219.625px;\",\"warning\":null,\"decision\":null,\"status\":\"true\",\"mapping\":\"15,4-[61,1-2,5]\",\"activestatus\":null,\"commented\":\"false\"},{\"widgetId\":\"dsExistingQuery_5\",\"UniqueId\":\"2\",\"stepId\":\"5\",\"description\":\"Read data from \\\"Vehicle_Loans.dbo.Filtered_Loan_Applications\\\" for data source \\\"MSSQL_NJ\\\"\",\"position\":\"position: absolute; left: 356.788px; top: 321.625px;\",\"warning\":null,\"decision\":null,\"status\":\"true\",\"mapping\":\"2,5-[0,0]\",\"dsstep\":\"undefined\",\"activestatus\":null},{\"widgetId\":\"dsEmail_dropped_6\",\"UniqueId\":\"20\",\"stepId\":\"6\",\"description\":\"Email\",\"position\":\"position: absolute; left: 863.82px; top: 216.797px;\",\"mapping\":\"20,6-[15,4]\",\"warning\":null,\"decision\":null,\"status\":\"true\",\"commented\":\"false\"}]",
+        "JsonUI": "[{\"widgetId\":\"dsStart_dropped\",\"UniqueId\":\"0\",\"stepId\":\"0\",\"description\":\"FDR using customsql on loan_Pushdown\",\"position\":\"position: absolute; left: 83px; top: 220.5px;\",\"warning\":null,\"decision\":null,\"status\":\"true\",\"mapping\":\"\",\"dsstep\":null,\"activestatus\":null},{\"widgetId\":\"dsExistingQuery_1\",\"UniqueId\":\"61\",\"stepId\":\"1\",\"description\":\"Read data from custom SQL query of the connection profile \\\"MSSQL_NJ\\\"\",\"position\":\"position: absolute; left: 348.788px; top: 114.625px; \",\"warning\":null,\"decision\":null,\"status\":\"true\",\"mapping\":\"61,1-[0,0]\",\"dsstep\":\"undefined\",\"activestatus\":null,\"commented\":\"false\"},{\"widgetId\":\"dsRecon_4\",\"UniqueId\":\"15\",\"stepId\":\"4\",\"description\":\"Map source & target fields\",\"position\":\"position: absolute; left: 606.792px; top: 219.625px;\",\"warning\":null,\"decision\":null,\"status\":\"true\",\"mapping\":\"15,4-[61,1-2,5]\",\"dsstep\":null,\"activestatus\":null},{\"widgetId\":\"dsExistingQuery_5\",\"UniqueId\":\"2\",\"stepId\":\"5\",\"description\":\"Read data from \\\"Vehicle_Loans.dbo.Filtered_Loan_Applications\\\" for data source \\\"MSSQL_NJ\\\"\",\"position\":\"position: absolute; left: 356.788px; top: 321.625px;\",\"warning\":null,\"decision\":null,\"status\":\"true\",\"mapping\":\"2,5-[0,0]\",\"dsstep\":\"undefined\",\"activestatus\":null},{\"widgetId\":\"dsEmail_dropped_6\",\"UniqueId\":\"20\",\"stepId\":\"6\",\"description\":\"Email\",\"position\":\"position: absolute; left: 863.82px; top: 216.797px;\",\"warning\":null,\"decision\":null,\"status\":\"true\",\"mapping\":\"20,6-[15,4]\",\"dsstep\":null,\"activestatus\":null}]",
         "LevelOne_Id": null,
         "LevelTwo_Id": null,
         "LevelThree_Id": null,
         "Priority": null,
-        "ModifiedBy": null,
+        "ModifiedBy": 113,
         "MigratedOn": null,
-        "ModifiedOn": null,
+        "ModifiedOn": "2024-09-18T07:39:04.03",
         "QualityDimension": null,
         "RiskCategoryId": null,
         "RiskProfile": null,
@@ -70,11 +70,11 @@
     ],
     "ScenarioDataSource": [
       {
-        "Id": 36523,
+        "Id": 36946,
         "Scenario_Header_Id": 25687,
         "Profile_Id": 278,
         "Query_Id": null,
-        "DCStep_Id": 306891,
+        "DCStep_Id": 310361,
         "BlendStepId": null,
         "ResultTableName": null,
         "TableOrViewName": null,
@@ -95,7 +95,7 @@
         "SF_Client_Secrect": null,
         "SF_Username": null,
         "SF_Password": null,
-        "SQL_Text": "SELECT \n    la.Application_ID,\n    la.Customer_ID,\n    la.Vehicle_ID,\n    la.Loan_Amount,\n    la.Down_Payment,\n    la.Application_Date,\n    la.Status,\n    c.First_Name,\n    c.Last_Name,\n    c.Address,\n    c.Phone_Number,\n    c.Email,\n    c.Aadhar_id\nFROM \n    Vehicle_Loans.dbo.Loan_Applications AS la\nINNER JOIN \n    Vehicle_Loans.dbo.Customers AS c\n    ON la.Customer_ID = c.Customer_ID\nWHERE \n    la.Loan_Amount > 50000",
+        "SQL_Text": "SELECT \n   *\nFROM \n    Vehicle_Loans.dbo.Loan_Applications AS la\nINNER JOIN \n    Vehicle_Loans.dbo.Customers AS c\n    ON la.Customer_ID = c.Customer_ID\nWHERE \n    la.Loan_Amount > 50000",
         "TableVizName": null,
         "ExtraColumnSC": null,
         "DefaultfParallelism": 1.0,
@@ -120,15 +120,15 @@
         "ProfileName": "MSSQL_NJ",
         "CreatedOnSC": null,
         "CreatedBySC": null,
-        "ModifiedOnSC": null,
-        "ModifiedBySC": null
+        "ModifiedOnSC": "2024-09-18T07:39:04.013",
+        "ModifiedBySC": 113
       },
       {
-        "Id": 36524,
+        "Id": 36947,
         "Scenario_Header_Id": 25687,
         "Profile_Id": 278,
         "Query_Id": null,
-        "DCStep_Id": 306893,
+        "DCStep_Id": 310363,
         "BlendStepId": null,
         "ResultTableName": null,
         "TableOrViewName": "Vehicle_Loans.dbo.Filtered_Loan_Applications",
@@ -183,7 +183,7 @@
     "Query": null,
     "DCSteps": [
       {
-        "Id": 306890,
+        "Id": 310360,
         "ScenarioId": 25687,
         "QueryId": null,
         "Job_Id": null,
@@ -192,8 +192,8 @@
         "TransformationId": 0,
         "Description": "kajol 9/2/2024 7:40:03 AM",
         "Position": null,
-        "CreatedOn": "2024-09-10T00:23:47.28",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.317",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "Status": true,
@@ -220,7 +220,7 @@
         "QueryTimeOut": null
       },
       {
-        "Id": 306891,
+        "Id": 310361,
         "ScenarioId": 25687,
         "QueryId": null,
         "Job_Id": null,
@@ -229,8 +229,8 @@
         "TransformationId": 61,
         "Description": "Read data from customer SQL query of the connection profile  \"MSSQL Demo\"",
         "Position": "position: absolute; left: 348.788px; top: 114.625px;",
-        "CreatedOn": "2024-09-10T00:23:47.42",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.397",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "Status": true,
@@ -257,7 +257,7 @@
         "QueryTimeOut": null
       },
       {
-        "Id": 306892,
+        "Id": 310362,
         "ScenarioId": 25687,
         "QueryId": null,
         "Job_Id": null,
@@ -266,10 +266,10 @@
         "TransformationId": 15,
         "Description": "Map source & target fields",
         "Position": "position: absolute; left: 606.792px; top: 219.625px;",
-        "CreatedOn": "2024-09-10T00:23:47.57",
-        "CreatedBy": 122,
-        "ModifiedOn": "2024-09-10T01:45:27.59",
-        "ModifiedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.507",
+        "CreatedBy": 113,
+        "ModifiedOn": null,
+        "ModifiedBy": null,
         "Status": true,
         "ErrorCodes": null,
         "SourceOrTarget": null,
@@ -294,7 +294,7 @@
         "QueryTimeOut": null
       },
       {
-        "Id": 306893,
+        "Id": 310363,
         "ScenarioId": 25687,
         "QueryId": null,
         "Job_Id": null,
@@ -303,8 +303,8 @@
         "TransformationId": 2,
         "Description": "Read data from \"Vehicle_Loans.dbo.Filtered_Loan_Applications\" for data source \"MSSQL Demo\"",
         "Position": "position: absolute; left: 348.788px; top: 114.625px;",
-        "CreatedOn": "2024-09-10T00:23:47.617",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.63",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "Status": true,
@@ -331,7 +331,7 @@
         "QueryTimeOut": null
       },
       {
-        "Id": 307045,
+        "Id": 310364,
         "ScenarioId": 25687,
         "QueryId": null,
         "Job_Id": null,
@@ -340,10 +340,10 @@
         "TransformationId": 20,
         "Description": "Email",
         "Position": "position: absolute; left: 863.82px; top: 216.797px;",
-        "CreatedOn": "2024-09-10T01:49:07.63",
-        "CreatedBy": 122,
-        "ModifiedOn": "2024-09-10T01:49:10.96",
-        "ModifiedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.757",
+        "CreatedBy": 113,
+        "ModifiedOn": null,
+        "ModifiedBy": null,
         "Status": true,
         "ErrorCodes": null,
         "SourceOrTarget": null,
@@ -386,7 +386,7 @@
     "DCStepsQC": [],
     "MapNRecon": [
       {
-        "Id": 160595,
+        "Id": 160931,
         "Scenario_Header_Id": 25687,
         "SourceColumnName": "Application_ID",
         "SourceAliasColumnName": null,
@@ -404,8 +404,8 @@
         "IncludeTarget": null,
         "VariantThreshold": null,
         "IsVerifiedManually": true,
-        "CreatedOn": "2024-09-10T00:23:47.297",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.507",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "IsDerivedSource": null,
@@ -414,7 +414,7 @@
         "RiskCategoryId": null
       },
       {
-        "Id": 160596,
+        "Id": 160932,
         "Scenario_Header_Id": 25687,
         "SourceColumnName": "Customer_ID",
         "SourceAliasColumnName": null,
@@ -432,8 +432,8 @@
         "IncludeTarget": null,
         "VariantThreshold": null,
         "IsVerifiedManually": true,
-        "CreatedOn": "2024-09-10T00:23:47.297",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.52",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "IsDerivedSource": null,
@@ -442,7 +442,7 @@
         "RiskCategoryId": null
       },
       {
-        "Id": 160597,
+        "Id": 160933,
         "Scenario_Header_Id": 25687,
         "SourceColumnName": "Vehicle_ID",
         "SourceAliasColumnName": null,
@@ -460,8 +460,8 @@
         "IncludeTarget": null,
         "VariantThreshold": null,
         "IsVerifiedManually": true,
-        "CreatedOn": "2024-09-10T00:23:47.297",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.52",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "IsDerivedSource": null,
@@ -470,7 +470,7 @@
         "RiskCategoryId": null
       },
       {
-        "Id": 160599,
+        "Id": 160934,
         "Scenario_Header_Id": 25687,
         "SourceColumnName": "Down_Payment",
         "SourceAliasColumnName": null,
@@ -488,8 +488,8 @@
         "IncludeTarget": null,
         "VariantThreshold": null,
         "IsVerifiedManually": true,
-        "CreatedOn": "2024-09-10T00:23:47.313",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.537",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "IsDerivedSource": null,
@@ -498,7 +498,7 @@
         "RiskCategoryId": null
       },
       {
-        "Id": 160600,
+        "Id": 160935,
         "Scenario_Header_Id": 25687,
         "SourceColumnName": "Application_Date",
         "SourceAliasColumnName": null,
@@ -516,8 +516,8 @@
         "IncludeTarget": null,
         "VariantThreshold": null,
         "IsVerifiedManually": true,
-        "CreatedOn": "2024-09-10T00:23:47.313",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.537",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "IsDerivedSource": null,
@@ -526,7 +526,7 @@
         "RiskCategoryId": null
       },
       {
-        "Id": 160601,
+        "Id": 160936,
         "Scenario_Header_Id": 25687,
         "SourceColumnName": "Status",
         "SourceAliasColumnName": null,
@@ -544,8 +544,8 @@
         "IncludeTarget": null,
         "VariantThreshold": null,
         "IsVerifiedManually": true,
-        "CreatedOn": "2024-09-10T00:23:47.313",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.537",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "IsDerivedSource": null,
@@ -554,7 +554,7 @@
         "RiskCategoryId": null
       },
       {
-        "Id": 160602,
+        "Id": 160937,
         "Scenario_Header_Id": 25687,
         "SourceColumnName": "First_Name",
         "SourceAliasColumnName": null,
@@ -572,8 +572,8 @@
         "IncludeTarget": null,
         "VariantThreshold": null,
         "IsVerifiedManually": true,
-        "CreatedOn": "2024-09-10T00:23:47.327",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.553",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "IsDerivedSource": null,
@@ -582,7 +582,7 @@
         "RiskCategoryId": null
       },
       {
-        "Id": 160603,
+        "Id": 160938,
         "Scenario_Header_Id": 25687,
         "SourceColumnName": "Last_Name",
         "SourceAliasColumnName": null,
@@ -600,8 +600,8 @@
         "IncludeTarget": null,
         "VariantThreshold": null,
         "IsVerifiedManually": true,
-        "CreatedOn": "2024-09-10T00:23:47.327",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.553",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "IsDerivedSource": null,
@@ -610,7 +610,7 @@
         "RiskCategoryId": null
       },
       {
-        "Id": 160604,
+        "Id": 160939,
         "Scenario_Header_Id": 25687,
         "SourceColumnName": "Address",
         "SourceAliasColumnName": null,
@@ -628,8 +628,8 @@
         "IncludeTarget": null,
         "VariantThreshold": null,
         "IsVerifiedManually": true,
-        "CreatedOn": "2024-09-10T00:23:47.327",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.553",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "IsDerivedSource": null,
@@ -638,7 +638,7 @@
         "RiskCategoryId": null
       },
       {
-        "Id": 160605,
+        "Id": 160940,
         "Scenario_Header_Id": 25687,
         "SourceColumnName": "Phone_Number",
         "SourceAliasColumnName": null,
@@ -656,8 +656,8 @@
         "IncludeTarget": null,
         "VariantThreshold": null,
         "IsVerifiedManually": true,
-        "CreatedOn": "2024-09-10T00:23:47.343",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.553",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "IsDerivedSource": null,
@@ -666,7 +666,7 @@
         "RiskCategoryId": null
       },
       {
-        "Id": 160606,
+        "Id": 160941,
         "Scenario_Header_Id": 25687,
         "SourceColumnName": "Email",
         "SourceAliasColumnName": null,
@@ -684,8 +684,8 @@
         "IncludeTarget": null,
         "VariantThreshold": null,
         "IsVerifiedManually": true,
-        "CreatedOn": "2024-09-10T00:23:47.343",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.567",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "IsDerivedSource": null,
@@ -694,7 +694,7 @@
         "RiskCategoryId": null
       },
       {
-        "Id": 160607,
+        "Id": 160942,
         "Scenario_Header_Id": 25687,
         "SourceColumnName": "Aadhar_id",
         "SourceAliasColumnName": null,
@@ -712,8 +712,8 @@
         "IncludeTarget": null,
         "VariantThreshold": null,
         "IsVerifiedManually": true,
-        "CreatedOn": "2024-09-10T00:23:47.343",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.567",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "IsDerivedSource": null,
@@ -722,7 +722,7 @@
         "RiskCategoryId": null
       },
       {
-        "Id": 160623,
+        "Id": 160943,
         "Scenario_Header_Id": 25687,
         "SourceColumnName": "Loan_Amount",
         "SourceAliasColumnName": null,
@@ -740,8 +740,8 @@
         "IncludeTarget": null,
         "VariantThreshold": 0.0,
         "IsVerifiedManually": true,
-        "CreatedOn": "2024-09-10T01:45:27.307",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.583",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "IsDerivedSource": null,
@@ -753,8 +753,8 @@
     "ScenarioQCFieldTypes": [],
     "ScenarioTableFieldTypes": [
       {
-        "Id": 324343,
-        "ScenarioDataSourceId": 36523,
+        "Id": 327309,
+        "ScenarioDataSourceId": 36946,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": null,
@@ -770,8 +770,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324344,
-        "ScenarioDataSourceId": 36523,
+        "Id": 327310,
+        "ScenarioDataSourceId": 36946,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": null,
@@ -787,8 +787,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324345,
-        "ScenarioDataSourceId": 36523,
+        "Id": 327311,
+        "ScenarioDataSourceId": 36946,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": null,
@@ -804,8 +804,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324346,
-        "ScenarioDataSourceId": 36523,
+        "Id": 327312,
+        "ScenarioDataSourceId": 36946,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": null,
@@ -821,8 +821,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324347,
-        "ScenarioDataSourceId": 36523,
+        "Id": 327313,
+        "ScenarioDataSourceId": 36946,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": null,
@@ -838,8 +838,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324348,
-        "ScenarioDataSourceId": 36523,
+        "Id": 327314,
+        "ScenarioDataSourceId": 36946,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": null,
@@ -855,8 +855,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324349,
-        "ScenarioDataSourceId": 36523,
+        "Id": 327315,
+        "ScenarioDataSourceId": 36946,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": null,
@@ -872,8 +872,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324350,
-        "ScenarioDataSourceId": 36523,
+        "Id": 327316,
+        "ScenarioDataSourceId": 36946,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": null,
@@ -889,8 +889,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324351,
-        "ScenarioDataSourceId": 36523,
+        "Id": 327317,
+        "ScenarioDataSourceId": 36946,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": null,
@@ -906,8 +906,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324352,
-        "ScenarioDataSourceId": 36523,
+        "Id": 327318,
+        "ScenarioDataSourceId": 36946,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": null,
@@ -923,8 +923,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324353,
-        "ScenarioDataSourceId": 36523,
+        "Id": 327319,
+        "ScenarioDataSourceId": 36946,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": null,
@@ -940,8 +940,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324354,
-        "ScenarioDataSourceId": 36523,
+        "Id": 327320,
+        "ScenarioDataSourceId": 36946,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": null,
@@ -957,8 +957,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324355,
-        "ScenarioDataSourceId": 36523,
+        "Id": 327321,
+        "ScenarioDataSourceId": 36946,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": null,
@@ -974,8 +974,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324356,
-        "ScenarioDataSourceId": 36524,
+        "Id": 327322,
+        "ScenarioDataSourceId": 36947,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": "Vehicle_Loans.dbo.Filtered_Loan_Applications",
@@ -991,8 +991,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324357,
-        "ScenarioDataSourceId": 36524,
+        "Id": 327323,
+        "ScenarioDataSourceId": 36947,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": "Vehicle_Loans.dbo.Filtered_Loan_Applications",
@@ -1008,8 +1008,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324358,
-        "ScenarioDataSourceId": 36524,
+        "Id": 327324,
+        "ScenarioDataSourceId": 36947,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": "Vehicle_Loans.dbo.Filtered_Loan_Applications",
@@ -1025,8 +1025,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324359,
-        "ScenarioDataSourceId": 36524,
+        "Id": 327325,
+        "ScenarioDataSourceId": 36947,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": "Vehicle_Loans.dbo.Filtered_Loan_Applications",
@@ -1042,8 +1042,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324360,
-        "ScenarioDataSourceId": 36524,
+        "Id": 327326,
+        "ScenarioDataSourceId": 36947,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": "Vehicle_Loans.dbo.Filtered_Loan_Applications",
@@ -1059,8 +1059,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324361,
-        "ScenarioDataSourceId": 36524,
+        "Id": 327327,
+        "ScenarioDataSourceId": 36947,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": "Vehicle_Loans.dbo.Filtered_Loan_Applications",
@@ -1076,8 +1076,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324362,
-        "ScenarioDataSourceId": 36524,
+        "Id": 327328,
+        "ScenarioDataSourceId": 36947,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": "Vehicle_Loans.dbo.Filtered_Loan_Applications",
@@ -1093,8 +1093,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324363,
-        "ScenarioDataSourceId": 36524,
+        "Id": 327329,
+        "ScenarioDataSourceId": 36947,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": "Vehicle_Loans.dbo.Filtered_Loan_Applications",
@@ -1110,8 +1110,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324364,
-        "ScenarioDataSourceId": 36524,
+        "Id": 327330,
+        "ScenarioDataSourceId": 36947,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": "Vehicle_Loans.dbo.Filtered_Loan_Applications",
@@ -1127,8 +1127,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324365,
-        "ScenarioDataSourceId": 36524,
+        "Id": 327331,
+        "ScenarioDataSourceId": 36947,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": "Vehicle_Loans.dbo.Filtered_Loan_Applications",
@@ -1144,8 +1144,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324366,
-        "ScenarioDataSourceId": 36524,
+        "Id": 327332,
+        "ScenarioDataSourceId": 36947,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": "Vehicle_Loans.dbo.Filtered_Loan_Applications",
@@ -1161,8 +1161,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324367,
-        "ScenarioDataSourceId": 36524,
+        "Id": 327333,
+        "ScenarioDataSourceId": 36947,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": "Vehicle_Loans.dbo.Filtered_Loan_Applications",
@@ -1178,8 +1178,8 @@
         "NewlyAddedColumn": null
       },
       {
-        "Id": 324368,
-        "ScenarioDataSourceId": 36524,
+        "Id": 327334,
+        "ScenarioDataSourceId": 36947,
         "DBlendId": null,
         "ProfileId": 101,
         "TableName": "Vehicle_Loans.dbo.Filtered_Loan_Applications",
@@ -1210,7 +1210,7 @@
     "CSVFDR": [],
     "DCDependency": [
       {
-        "Id": 210886,
+        "Id": 213921,
         "ScenarioId": 25687,
         "QueryId": null,
         "StepId": 0,
@@ -1220,7 +1220,7 @@
         "JobId": null
       },
       {
-        "Id": 210887,
+        "Id": 213922,
         "ScenarioId": 25687,
         "QueryId": null,
         "StepId": 1,
@@ -1230,7 +1230,7 @@
         "JobId": null
       },
       {
-        "Id": 210888,
+        "Id": 213923,
         "ScenarioId": 25687,
         "QueryId": null,
         "StepId": 3,
@@ -1240,7 +1240,7 @@
         "JobId": null
       },
       {
-        "Id": 210889,
+        "Id": 213924,
         "ScenarioId": 25687,
         "QueryId": null,
         "StepId": 4,
@@ -1250,7 +1250,7 @@
         "JobId": null
       },
       {
-        "Id": 210890,
+        "Id": 213925,
         "ScenarioId": 25687,
         "QueryId": null,
         "StepId": 5,
@@ -1260,7 +1260,7 @@
         "JobId": null
       },
       {
-        "Id": 211025,
+        "Id": 213926,
         "ScenarioId": 25687,
         "QueryId": null,
         "StepId": 6,
@@ -1273,7 +1273,7 @@
     "ThirdPartyAPIParams": [],
     "EmailAlerts": [
       {
-        "Id": 22250,
+        "Id": 22277,
         "Scenario_Header_Id": 25687,
         "Query_Id": null,
         "Job_Id": null,
@@ -1283,15 +1283,15 @@
         "EmailWhen_S": "nuthan.jakkam@getrightdata.com",
         "FailRDjobWhenRecon_F": null,
         "DelayedTargetCompare": null,
-        "AttachResultsInEmail": false,
-        "ExportType": "",
+        "AttachResultsInEmail": null,
+        "ExportType": null,
         "RaiseDefect": null,
-        "CreatedOn": "2024-09-10T01:49:10.85",
-        "CreatedBy": 122,
+        "CreatedOn": "2024-09-18T07:38:43.757",
+        "CreatedBy": 113,
         "ModifiedOn": null,
         "ModifiedBy": null,
         "Status": null,
-        "DependantStepId": 0,
+        "DependantStepId": null,
         "EmailTemplateId": null
       }
     ],
