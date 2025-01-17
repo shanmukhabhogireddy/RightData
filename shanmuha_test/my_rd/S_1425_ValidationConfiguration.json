@@ -10,7 +10,7 @@
         "CreatedBy": "6b2c52ac-d9f9-4cdd-83c2-23d8c16f0042",
         "DataDomainHierarchyId": null,
         "DataQualityDimensionId": null,
-        "Description": "Snowflake_Validation_Rules_QUERYCHAIN1",
+        "Description": "Snowflake_Validation_Rules_QUERYCHAIN1_changed desc",
         "Hierarchy_Row": null,
         "ExtraColumn": null,
         "IgnoreKeyDuplicates": null,
